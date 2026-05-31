@@ -4,479 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M MATERIA — Городская инфраструктура будущего</title>
+    <title>M MATERIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            olive: '#4E5B31',
+                            dark: '#1e293b', /* Темный фон панелей из видео */
+                            bg: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        [span_24](start_span)/* Фирменная палитра проекта из Брендбука[span_24](end_span) */
-        :root {
-            --white: #ffffff;          [span_25](start_span)/* Белый[span_25](end_span) */
-            --black: #000000;          [span_26](start_span)/* Чёрный[span_26](end_span) */
-            --olive: #4E5B31;          [span_27](start_span)/* Оливковый[span_27](end_span) */
-            --grey: #E2E2E2;           [span_28](start_span)/* Серый[span_28](end_span) */
-            --terracotta: #B36247;     [span_29](start_span)/* Терракотовый[span_29](end_span) */
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            [span_30](start_span)[span_31](start_span)/* Использование Calibri Medium для основного текста[span_30](end_span)[span_31](end_span) */
-            font-family: 'Calibri', 'Segoe UI', sans-serif;
-            font-weight: 500; 
-            background-color: var(--white);
-            color: var(--black);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        [span_32](start_span)/* Использование Calibri SemiBold для заголовков и акцентов[span_32](end_span) */
-        h1, h2, h3, .stat-number, .btn, .logo-text, .mission-title {
-            font-weight: 600; 
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--grey);
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 100;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--black);
-        }
-        
-        .logo-box {
-            border: 2px solid var(--black);
-            padding: 2px 8px;
-            font-weight: 600;
-            margin-right: 8px;
-            font-size: 20px;
-        }
-        
-        .logo-text {
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--black);
-            margin-left: 25px;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--terracotta);
-        }
-        
-        .hero {
-            padding: 120px 20px;
-            text-align: center;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--white);
-        }
-        
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            max-width: 850px;
-            color: var(--black);
-        }
-        
-        .hero p {
-            font-size: 22px;
-            color: var(--olive);
-            margin-bottom: 40px;
-            max-width: 650px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 16px 38px;
-            background-color: var(--terracotta);
-            color: var(--white);
-            text-decoration: none;
-            font-size: 14px;
-            border-radius: 2px;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: var(--olive);
-        }
-        
-        section {
-            padding: 100px 40px;
-        }
-        
-        .section-title {
-            font-size: 32px;
-            margin-bottom: 60px;
-            text-align: center;
-            color: var(--black);
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--terracotta);
-            margin: 15px auto 0;
-        }
-        
-        .mission-container {
-            max-width: 850px;
-            margin: 0 auto 80px;
-            text-align: center;
-        }
-        
-        .mission-title {
-            font-size: 16px;
-            color: var(--terracotta);
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-        
-        .mission-text {
-            font-size: 24px;
-            line-height: 1.5;
-            color: var(--black);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .value-card {
-            background-color: var(--white);
-            padding: 40px;
-            border-top: 4px solid var(--olive);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.02);
-            border-radius: 2px;
-        }
-        
-        .value-card h3 {
-            color: var(--olive);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        
-        .value-card p {
-            font-size: 16px;
-            color: #333;
-            text-transform: none;
-            letter-spacing: normal;
-        }
-        
-        .stats-section {
-            background-color: var(--grey);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .stat-item .stat-number {
-            font-size: 64px;
-            color: var(--terracotta);
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .stat-item p {
-            font-size: 15px;
-            color: var(--black);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .product-card {
-            border: 1px solid var(--grey);
-            background-color: var(--white);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        }
-        
-        .product-img {
-            height: 280px;
-            background-color: #f7f7f7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 14px;
-            border-bottom: 1px solid var(--grey);
-        }
-        
-        .product-info {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        
-        .product-info h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--black);
-        }
-        
-        .product-info p {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 30px;
-            flex-grow: 1;
-            text-transform: none;
-            letter-spacing: normal;
-        }
-        
-        .btn-outline {
-            display: block;
-            text-align: center;
-            padding: 14px;
-            border: 1px solid var(--black);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--black);
-            color: var(--white);
-        }
-        
-        .contacts-section {
-            background-color: var(--black);
-            color: var(--white);
-        }
-        
-        .contacts-section .section-title {
-            color: var(--white);
-        }
-        
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .contact-item h4 {
-            font-size: 13px;
-            color: var(--grey);
-            margin-bottom: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .contact-item p, .contact-item a {
-            font-size: 20px;
-            color: var(--white);
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            color: var(--terracotta);
-        }
-        
-        footer {
-            background-color: var(--black);
-            color: #555;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 13px;
-            border-top: 1px solid #141414;
-        }
-        
-        /* Адаптивность для мобильных устройств (п. 5.1 ТЗ) */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 15px 20px;
-                gap: 15px;
-            }
-            nav a {
-                margin: 0 10px;
-                font-size: 14px;
-            }
-            .hero h1 {
-                font-size: 34px;
-            }
-            .hero p {
-                font-size: 18px;
-            }
-            .mission-text {
-                font-size: 20px;
-            }
-            section {
-                padding: 70px 20px;
-            }
-        }
+        body { font-family: 'Calibri', 'Segoe UI', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-brand-bg text-gray-900 antialiased">
 
-    <header>
-        <a href="#" class="logo">
-            <div class="logo-box">M</div>
-            <div class="logo-text">MATERIA</div>
-        </a>
-        <nav>
-            <a href="#about">О проекте</a>
-            <a href="#stats">Показатели</a>
-            <a href="#catalog">Каталог</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
+    <header class="max-w-7xl mx-auto px-6 py-8 flex items-center">
+        <div class="flex items-center font-bold text-2xl tracking-widest text-black">
+            <span class="border-2 border-black px-2 py-0.5 mr-2">M</span> MATERIA
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>M MATERIA</h1>
-            <p>Городская инфраструктура будущего. Трансформируем материю.</p>
-            <a href="#catalog" class="btn">Смотреть каталог</a>
-        </section>
-
-        <section id="about">
-            <div class="mission-container">
-                <div class="mission-title">Наша миссия</div>
-                <p class="mission-text">
-                    Улучшаем качество жизни людей, превращая отходы в инновационные элементы городской инфраструктуры.
-                </p>
+    <main class="max-w-7xl mx-auto px-6 pt-12 pb-20">
+        <div class="max-w-4xl">
+            <div class="flex items-center text-brand-olive font-semibold tracking-wider text-sm mb-6">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                INDUSTRIAL ZEN DESIGN
             </div>
             
-            <h2 class="section-title">Ценности проекта</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>Любовь</h3>
-                    <p>Сущностная составляющая нашего подхода к делу и к людям. Мы верим, что истинное созидание возможно только через любовь к планете и ее жителям.</p>
-                </div>
-                <div class="value-card">
-                    <h3>Забота</h3>
-                    <p>Делаем как для себя. Экология не ради хайпа, а ради жизни. Каждое наше решение продиктовано искренней заботой о будущем.</p>
-                </div>
-                <div class="value-card">
-                    <h3>Ответственность</h3>
-                    <p>Сами создали проблему отходов, сами решаем ее. Принимаем вызов и действуем, осознавая свою роль в формировании устойчивого будущего.</p>
-                </div>
+            <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-8 text-gray-900">
+                Городская инфраструктура<br>будущего. 
+                <span class="text-brand-olive block mt-2">Трансформируем материю.</span>
+            </h1>
+            
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl leading-relaxed">
+                Производим спортивно-рекреационные объекты из вторичных материалов под ключ. Превращаем «проблемо-килограммы» в «пользо-метры».
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+                <a href="#projects" class="bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-8 rounded flex items-center transition-colors">
+                    Смотреть проекты 
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                <a href="#gov" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-medium py-3 px-8 rounded transition-colors">
+                    Для госзаказчиков
+                </a>
             </div>
-        </section>
-
-        <section id="stats" class="stats-section">
-            <h2 class="section-title">Ключевые показатели</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">1 850 т</span>
-                    <p>тонн переработано</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">62 000+</span>
-                    <p>единиц продукции выпущено</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">140+</span>
-                    <p>партнеров проекта</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="catalog">
-            <h2 class="section-title">Каталог продукции</h2>
-            <div class="catalog-grid">
-                <div class="product-card">
-                    <div class="product-img">[ Реалистичное фото продукции ]</div>
-                    <div class="product-info">
-                        <h3>Элемент городской среды «Тип-А»</h3>
-                        <p>Инновационный элемент уличной архитектуры из переработанного эко-композита. Обладает высочайшей стойкостью к суровым климатическим условиям и механическим повреждениям.</p>
-                        <a href="#contacts" class="btn-outline">Подробнее</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">[ Реалистичное фото продукции ]</div>
-                    <div class="product-info">
-                        <h3>Эко-плитка тротуарная</h3>
-                        <p>Высокопрочное износостойкое покрытие для пешеходных зон и парковых пространств. Не выделяет вредных токсичных веществ при сильном летнем нагревании.</p>
-                        <a href="#contacts" class="btn-outline">Подробнее</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">[ Реалистичное фото продукции ]</div>
-                    <div class="product-info">
-                        <h3>Малые архитектурные формы</h3>
-                        <p>Современные урны, вазоны и уличные скамьи. Гармонично вписываются в архитектуру современного «умного города», демонстрируя принципы эко-ответственности.</p>
-                        <a href="#contacts" class="btn-outline">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacts" class="contacts-section">
-            <h2 class="section-title">Контакты</h2>
-            <div class="contacts-grid">
-                <div class="contact-item">
-                    <h4>Телефон</h4>
-                    <p><a href="tel:+70000000000">+7 000 000 00 00</a></p>
-                </div>
-                <div class="contact-item">
-                    <h4>E-mail</h4>
-                    <p><a href="mailto:mail@website.ru">mail@website.ru</a></p>
-                </div>
-                <div class="contact-item">
-                    <h4>Географический адрес</h4>
-                    <p>ул. Название, дом Х</p>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 M MATERIA. Все права защищены. Дизайн разработан строго по гайдлайнам проекта.</p>
-    </footer>
+    <section class="bg-brand-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-gray-700">
+            
+            <div class="px-6 first:pl-0">
+                <div class="text-4xl font-bold mb-2">450+</div>
+                <div class="text-xs tracking-widest uppercase text-gray-400 font-semibold">Тонн переработано</div>
+            </div>
+            
+            <div class="px-6">
+                <div class="text-4xl font-bold mb-2">12</div>
+                <div class="text-xs tracking-widest uppercase text-gray-400 font-semibold">Городов присутствия</div>
+            </div>
+            
+            <div class="px-6">
+                <div class="flex items-center justify-center md:justify-start mb-2">
+                    <svg class="w-10 h-10 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <div class="text-4xl font-bold">ISO</div>
+                </div>
+                <div class="text-xs tracking-widest uppercase text-gray-400 font-semibold">Сертификация 9001</div>
+            </div>
+
+        </div>
+    </section>
 
 </body>
 </html>
