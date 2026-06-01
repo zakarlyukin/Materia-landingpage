@@ -243,6 +243,144 @@
 
         </div>
     </section>
+    <!-- Секция: Решения для ваших задач -->
+    <section class="bg-brand-dark text-white py-24 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Решения для ваших задач</h2>
+                <p class="text-gray-400">Мы говорим на одном языке с каждым партнером</p>
+            </div>
+
+            <!-- Кнопки вкладок (Табы) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 border-b border-gray-700 pb-6">
+                <button onclick="openTab(event, 'tab-gov')" class="tab-btn active-tab px-6 py-3 rounded-full text-sm font-semibold transition-colors bg-brand-olive text-white">
+                    Госзаказчикам
+                </button>
+                <button onclick="openTab(event, 'tab-dev')" class="tab-btn px-6 py-3 rounded-full text-sm font-semibold transition-colors text-gray-400 hover:text-white border border-transparent hover:border-gray-600">
+                    Девелоперам
+                </button>
+                <button onclick="openTab(event, 'tab-b2c')" class="tab-btn px-6 py-3 rounded-full text-sm font-semibold transition-colors text-gray-400 hover:text-white border border-transparent hover:border-gray-600">
+                    Частным лицам
+                </button>
+            </div>
+
+            <!-- Контент вкладок и Блок партнеров -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Левая часть: Динамический контент вкладок -->
+                <div class="lg:col-span-2 bg-slate-800 rounded-xl p-8 md:p-10 shadow-inner">
+                    
+                    <!-- Вкладка 1: Госзаказчикам (Активная по умолчанию) -->
+                    <div id="tab-gov" class="tab-content block">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Для Администраций и Муниципалитетов</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            Вам нужно благоустроить город, отчитаться за экологию и не иметь проблем с документами. Мы предлагаем решение «под ключ».
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Полный пакет документов (ГОСТ, Паспорта, Сертификаты).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Высокая антивандальность: материал не горит, не ломается.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Эко-повестка: реальные цифры переработки для отчетов.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Вкладка 2: Девелоперам (Скрыта) -->
+                    <div id="tab-dev" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Для Застройщиков и Девелоперов</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            Повышайте класс жилого комплекса за счет инновационного благоустройства.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Снижение затрат на эксплуатацию (не нужно красить и ремонтировать).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Современный дизайн, вписывающийся в любую архитектуру.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Вкладка 3: Частным лицам (Скрыта) -->
+                    <div id="tab-b2c" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Для Частных Заказчиков</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            Долговечные материалы для вашего загородного дома или участка.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Экологически безопасные материалы (без токсичных выделений).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-olive mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-gray-300">Простота монтажа и отсутствие необходимости в уходе.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Правая часть: Блок партнеров -->
+                <div class="bg-slate-800 rounded-xl p-8 flex flex-col justify-center border border-gray-700 relative overflow-hidden">
+                    <!-- Легкий градиент на фоне блока партнеров -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-olive/10 to-transparent"></div>
+                    
+                    <div class="relative z-10">
+                        <h4 class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-8 text-center md:text-left">Наши партнеры</h4>
+                        <div class="space-y-6">
+                            <div class="text-xl font-semibold text-white tracking-wide border-b border-gray-700 pb-4">РОСАТОМ</div>
+                            <div class="text-xl font-semibold text-white tracking-wide border-b border-gray-700 pb-4">Фонд ЭКОЛОГИЯ</div>
+                            <div class="text-xl font-semibold text-white tracking-wide">Администрации Городов</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="bg-black py-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 M MATERIA. Трансформируем материю.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт для работы вкладок (Табов) -->
+    <script>
+        function openTab(evt, tabName) {
+            // Скрываем весь контент
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            // Сбрасываем стили всех кнопок
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" bg-brand-olive text-white", " text-gray-400 border-transparent hover:border-gray-600 hover:text-white");
+            }
+            // Показываем текущую вкладку и добавляем активный стиль кнопке
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className = evt.currentTarget.className.replace(" text-gray-400 border-transparent hover:border-gray-600 hover:text-white", " bg-brand-olive text-white");
+        }
+    </script>
 
 </body>
 </html>
